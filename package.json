@@ -1,0 +1,35 @@
+{
+  "name": "ustream-sdk",
+  "version": "0.0.1",
+  "description": "JavaScript wrapper for Ustream REST API",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "ftp": "^0.3.10",
+    "qs": "^6.5.0"
+  },
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "mocha": "^3.5.0",
+    "sinon": "^2.4.1",
+    "standard": "^10.0.2"
+  },
+  "main": "lib/ustream.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "standard && mocha test/ --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.ibm.com:Michael-James-Parsons/ustream-nodejs-sdk.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "Ustream",
+    "SDK",
+    "API"
+  ],
+  "author": "Michael-James Parsons",
+  "license": "MIT"
+}
