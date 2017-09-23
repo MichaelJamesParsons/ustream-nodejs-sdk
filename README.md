@@ -298,3 +298,8 @@ All tests are located in the `/test` directory. To execute the testing suite, or
 run the following command.
 
     npm run test
+
+# Issues & Contributing
+Have a feature request or bug report? Create an entry in the issue tracker, and include as much detail as possible. I usually reply within 12 hours.
+
+Code contributions must adhere to the [contribution guidelines](CONTRIBUTING.md).
