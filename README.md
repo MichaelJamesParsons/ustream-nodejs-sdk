@@ -5,7 +5,7 @@ JavaScript wrapper for Ustream's REST API.
 All methods that access API resources, such as `ustream.video.*` or `ustream.channel.*` will return a Promise.
 
 ```JavaScript
-import Ustream from 'ustream'
+let Ustream = require('ustream-sdk')
 
 // Set up instance using password authentication
 let ustream = new Ustream({
