@@ -1,6 +1,6 @@
 {
   "name": "ustream-sdk",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "JavaScript wrapper for Ustream REST API",
   "dependencies": {
     "axios": "^0.16.2",
@@ -22,10 +22,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.ibm.com:Michael-James-Parsons/ustream-nodejs-sdk.git"
+    "url": "https://github.com/MichaelJamesParsons/ustream-nodejs-sdk.git"
   },
   "keywords": [
-    "JavaScript",
     "Ustream",
     "SDK",
     "API"
