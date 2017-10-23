@@ -1,4 +1,6 @@
 # Ustream JavaScript SDK
+[![npm version](https://badge.fury.io/js/ustream-sdk.svg)](https://badge.fury.io/js/ustream-sdk)
+
 JavaScript wrapper for Ustream's REST API.
 
 ## Installation
