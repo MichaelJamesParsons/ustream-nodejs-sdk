@@ -91,6 +91,18 @@ ustream.video.upload(channelId, file, opts)
 | opts.protect      | "public" "private" | Default is "private". If set to true, video will be published upon end of upload. |
 
 
+### Video Upload Status
+
+```JavaScript
+ustream.video.getStatus(channelId, videoId)
+```
+
+| Parameter         | Type               | Description                |
+|-------------------|--------------------|----------------------------|
+| channelId         | int                | ID of an existing channel. |
+| videoId           | int                | ID of an existing video.   |
+
+
 ### List Videos
 
 ```JavaScript
@@ -116,16 +128,14 @@ ustream.video.get(videoId)
 |-------------------|--------------------|----------------------------|
 | videoId           | int                | ID of an existing video.   |
 
-
-### Video Upload Status
+### Delete Video
 
 ```JavaScript
-ustream.video.getStatus(channelId, videoId)
+ustream.video.remove(videoId)
 ```
 
 | Parameter         | Type               | Description                |
 |-------------------|--------------------|----------------------------|
-| channelId         | int                | ID of an existing channel. |
 | videoId           | int                | ID of an existing video.   |
 
 
@@ -167,7 +177,7 @@ ustream.channel.edit(channelId, title, opts)
 | opts.tags         | string             | Comma delimited list of channel tags |
 
 
-## Remove/Delete Channel
+## Delete Channel
 
 ```JavaScript
 ustream.channel.remove(channelId)
