@@ -309,6 +309,39 @@ ustream.channel.setBrandingType(channelId, type)
 | type              | string             | The branding type.            |
 
 
+# Todo
+Since the release of this SDK, Ustream has added many new endpoints to their API. Support for these endpoints will be implemented in the upcoming weeks.
+
+- [ ] Device passwords
+    - [ ] Get device passwords
+    - [ ] Create device password
+    - [ ] Delete device password
+- [ ] Playlists
+    - [ ] List the user's playlists
+    - [ ] Create a playlist
+    - [ ] Playlist details
+    - [ ] Modify a playlist
+    - [ ] Delete a playlist
+    - [ ] Playlist videos
+    - [ ] Playlist video
+    - [ ] Channel playlists
+- [ ] Video (new endpoints)
+    - [ ] Download video
+    - [ ] Video expiration
+    - [ ] Video thumbnail
+    - [ ] Video labels
+    - [ ] Video caption
+    - [ ] Video trim
+    - [ ] Video copy
+        - [ ] Check copy status
+    - [ ] Video chapters
+- [ ] Channel (new endpoints)
+    - [ ] List featured videos
+    - [ ] Updated featured videos
+- [ ] Stream settings
+    - [ ] Multi quality streaming
+
+
 # Testing
 All tests are located in the `/test` directory. To execute the testing suite, or check for style guide violations,
 run the following command.
