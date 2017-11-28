@@ -5,7 +5,11 @@ JavaScript wrapper for Ustream's REST API.
 
 ## Installation
 
+### NPM
     npm install ustream-sdk
+
+### Yarn
+    yarn add ustream-sdk
 
 ## Basic Usage
 All methods that access API resources, such as `ustream.video.*` or `ustream.channel.*` will return a Promise.
