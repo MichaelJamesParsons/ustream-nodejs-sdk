@@ -341,7 +341,7 @@ Since the release of this SDK, Ustream has added many new endpoints to their API
     - [ ] Video chapters
 - [ ] Channel (new endpoints)
     - [ ] List featured videos
-    - [ ] Updated featured videos
+    - [ ] Update featured videos
 - [ ] Stream settings
     - [ ] Multi quality streaming
 
