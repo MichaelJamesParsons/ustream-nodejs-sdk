@@ -62,10 +62,45 @@ ustream.channel.list().then((pageableResult) => {
 | hasNextPage() | boolean                   | If true, next() will return a new page of data. If false, no next page exists.  |
 
 ## Authentication API
-Currently, only "password" authentication is supported. See the basic usage section for an example.
 
-### Authentication Tokens
-The SDK will refresh your authorization tokens automatically, so you can focus on the task at hand.
+### Client Credentials Flow
+
+```javascript
+let ustream = new Ustream({
+    username: "...",
+    password: "...",
+    client_id: "...",
+    client_secret: "...",
+    type: "password"
+})
+```
+
+### Oauth Implicit Authentication Flow
+
+```javascript
+let ustream = new Ustream({
+  type: 'oauth_token',
+  access_token: '...',
+  token_type: 'bearer',
+  expires_in: 86400
+})
+```
+
+### Oauth Authorization Code Authentication Flow
+
+```javascript
+let ustream = new Ustream({
+  type: 'oauth_code',
+  client_id: '...',
+  client_secret: '...',
+  code: '...',
+  redirect_uri: '...'
+})
+```
+
+### Oauth Demo App
+
+[View Demo](https://github.com/MichaelJamesParsons/ustream-nodejs-oauth-example)
 
 ### Changing/Updating Authentication Credentials
 If you choose to change your authentication workflow or swap out credentials after initializing Ustream, you can utilize the `setAuthCredentials` method.
@@ -316,6 +351,9 @@ ustream.channel.setBrandingType(channelId, type)
 # Todo
 Since the release of this SDK, Ustream has added many new endpoints to their API. Support for these endpoints will be implemented in the upcoming weeks.
 
+- [x] Authentication
+    - [x] Oauth implicit flow
+    - [x] Oauth authorization code flow
 - [ ] Device passwords
     - [ ] Get device passwords
     - [ ] Create device password
