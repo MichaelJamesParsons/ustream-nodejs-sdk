@@ -3,6 +3,41 @@
 
 JavaScript wrapper for Ustream's REST API.
 
+- [Installation](#installation)
+- [Basic Usage](#basic-usage)
+    - [Paging Results](#paging-results)
+- [Authentication API](#authentication-api)
+	- [Client Credentials Flow](#client-credentials-flow)
+	- [Oauth Implicit Authentication Flow](#oauth-implicit-authentication-flow)
+	- [Oauth Authorization Code Authentication Flow](#oauth-authorization-code-authentication-flow)
+	- [Changing Authentication Credentials Workflow](#changing-authentication-credentials-workflow)
+	- [Oauth Demo App](#oauth-demo-app)
+- [Video API](#video-api)
+	- [Upload Video](#upload-video)
+	- [Video Upload Status](#video-upload-status)
+	- [List Videos](#list-videos)
+	- [Get Video Details](#get-video-details)
+	- [Delete Video](#delete-video)
+- [Channel API](#channel-api)
+	- [Get Channel](#get-channel)
+	- [Create Channel](#create-channel)
+	- [Edit Channel](#edit-channel)
+	- [Delete Channel](#delete-channel)
+	- [List Channels](#list-channels)
+	- [Check Password Protection Status](#check-password-protection-status)
+	- [Enable Password Protection](#enable-password-protection)
+	- [Disable Password Protection](#disable-password-protection)
+	- [Get Embed Lock Status](#get-embed-lock-status)
+	- [Edit Embed Lock Status](#edit-embed-lock-status)
+	- [Get Whitelisted URLs](#get-whitelisted-urls)
+	- [Add URL to Whitelist](#add-url-to-whitelist)
+	- [Remove URLs from Whitelist](#remove-urls-from-whitelist)
+	- [Sharing Control](#sharing-control)
+	- [Change Branding Type](#change-branding-type)
+- [Todo](#todo)
+- [Testing](#testing)
+- [Issues & Contributing](#issues-and-contributing)
+
 ## Installation
 
 ### NPM
@@ -102,7 +137,7 @@ let ustream = new Ustream({
 
 [View Demo](https://github.com/MichaelJamesParsons/ustream-nodejs-oauth-example)
 
-### Changing/Updating Authentication Credentials
+### Changing Authentication Credentials Workflow
 If you choose to change your authentication workflow or swap out credentials after initializing Ustream, you can utilize the `setAuthCredentials` method.
 
 ```JavaScript
@@ -191,7 +226,7 @@ ustream.channel.get(channelId, opts)
 | channelId         | int                | ID of an existing channel. |
 | opts.detail_level | string             | Default is null. If set to "minimal", the result set is limited to id, title, picture, owner and locks data. If the channel is protected, only minimal data can be retrieved without valid access token. |
 
-## Create Channel
+### Create Channel
 
 ```JavaScript
 ustream.channel.create(channelId, opts)
@@ -202,7 +237,7 @@ ustream.channel.create(channelId, opts)
 | channelId         | int                | ID of an existing channel. |
 | opts.description  | string             | Description of channel.    |
 
-## Edit Channel
+### Edit Channel
 
 ```JavaScript
 ustream.channel.edit(channelId, title, opts)
@@ -216,7 +251,7 @@ ustream.channel.edit(channelId, title, opts)
 | opts.tags         | string             | Comma delimited list of channel tags |
 
 
-## Delete Channel
+### Delete Channel
 
 ```JavaScript
 ustream.channel.remove(channelId)
@@ -226,7 +261,7 @@ ustream.channel.remove(channelId)
 --------------------|--------------------|-----------------------------
 | channelId         | int                | ID of an existing channel. |
 
-## List Channels
+### List Channels
 
 ```JavaScript
 ustream.channel.list(pageSize, page)
@@ -239,7 +274,7 @@ ustream.channel.list(pageSize, page)
 | pageSize  | int  | (optional) Default: 100. The number of results to show per page. |
 | page      | int  | (optional) Default: 1. The page to retrieve.                     |
 
-## Check Password Protection Status
+### Check Password Protection Status
 
 ```JavaScript
 ustream.channel.getPasswordProtectionStatus(channelId)
@@ -249,7 +284,7 @@ ustream.channel.getPasswordProtectionStatus(channelId)
 --------------------|--------------------|-----------------------------
 | channelId         | int                | ID of an existing channel. |
 
-## Enable Password Protection
+### Enable Password Protection
 
 ```JavaScript
 ustream.channel.enablePasswordProtection(channelId, password)
@@ -260,7 +295,7 @@ ustream.channel.enablePasswordProtection(channelId, password)
 | channelId         | int                | ID of an existing channel.               |
 | password          | string             | The password used to access the channel. |
 
-## Disable Password Protection
+### Disable Password Protection
 
 ```JavaScript
 ustream.channel.disablePasswordProtection(channelId)
@@ -270,7 +305,7 @@ ustream.channel.disablePasswordProtection(channelId)
 --------------------|--------------------|-----------------------------
 | channelId         | int                | ID of an existing channel. |
 
-## Get Embed Lock Status
+### Get Embed Lock Status
 
 ```JavaScript
 ustream.channel.getEmbedLockStatus(channelId)
@@ -281,7 +316,7 @@ ustream.channel.getEmbedLockStatus(channelId)
 | channelId         | int                | ID of an existing channel. |
 
 
-## Enable/Disable Embed Lock
+### Edit Embed Lock Status
 
 ```JavaScript
 ustream.channel.setEmbedLock(channelId, isEmbedLocked)
@@ -292,7 +327,7 @@ ustream.channel.setEmbedLock(channelId, isEmbedLocked)
 | channelId         | int                | ID of an existing channel.                                                  |
 | isEmbedLocked     | boolean            | Default is false. True to enable restricted embed access. False to disable. |
 
-## Get Whitelisted URLs
+### Get Whitelisted URLs
 
 ```JavaScript
 ustream.channel.getUrlWhiteList(channelId)
@@ -302,7 +337,7 @@ ustream.channel.getUrlWhiteList(channelId)
 |-------------------|--------------------|----------------------------|
 | channelId         | int                | ID of an existing channel. |
 
-## Add URL to Whitelist
+### Add URL to Whitelist
 
 ```JavaScript
 ustream.channel.addUrlToWhiteList(channelId, url)
@@ -314,7 +349,7 @@ ustream.channel.addUrlToWhiteList(channelId, url)
 | url               | string             | URL to whitelisted domain. |
 
 
-## Remove URLs from Whitelist
+### Remove URLs from Whitelist
 The API currently does not support removing a single URL from the whitelist. All URLs must be removed, then added.
 
 ```JavaScript
@@ -326,7 +361,7 @@ ustream.channel.emptyUrlWhiteList(channelId, url)
 | channelId         | int                | ID of an existing channel. |
 | url               | string             | URL to whitelisted domain. |
 
-## Enable/Disable Content Sharing
+### Sharing Control
 
 ```JavaScript
 ustream.channel.setSharingControl(channelId, canShare)
@@ -337,7 +372,7 @@ ustream.channel.setSharingControl(channelId, canShare)
 | channelId         | int                | ID of an existing channel.                                |
 | canShare          | boolean            | If true, users will be able to share a channel's content. |
 
-## Change Branding Type
+### Change Branding Type
 
 ```JavaScript
 ustream.channel.setBrandingType(channelId, type)
@@ -348,7 +383,7 @@ ustream.channel.setBrandingType(channelId, type)
 | type              | string             | The branding type.            |
 
 
-# Todo
+## Todo
 Since the release of this SDK, Ustream has added many new endpoints to their API. Support for these endpoints will be implemented in the upcoming weeks.
 
 - [x] Authentication
@@ -384,13 +419,13 @@ Since the release of this SDK, Ustream has added many new endpoints to their API
     - [ ] Multi quality streaming
 
 
-# Testing
+## Testing
 All tests are located in the `/test` directory. To execute the testing suite, or check for style guide violations,
 run the following command.
 
     npm run test
 
-# Issues & Contributing
+## Issues and Contributing
 Have a feature request or bug report? Create an entry in the issue tracker, and include as much detail as possible. I usually reply within 12 hours.
 
 Code contributions must adhere to the [contribution guidelines](CONTRIBUTING.md).
