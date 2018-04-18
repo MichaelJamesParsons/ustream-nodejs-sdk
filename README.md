@@ -102,11 +102,11 @@ ustream.channel.list().then((pageableResult) => {
 
 ```javascript
 let ustream = new Ustream({
-    username: "...",
-    password: "...",
-    client_id: "...",
-    client_secret: "...",
-    type: "password"
+    type: "password",
+    username: '...'
+    password: '...'
+    client_id: '...'
+    client_secret: '...'
 })
 ```
 
@@ -415,8 +415,15 @@ Since the release of this SDK, Ustream has added many new endpoints to their API
 - [ ] Channel (new endpoints)
     - [ ] List featured videos
     - [ ] Update featured videos
+    - [ ] Get channel managers
 - [ ] Stream settings
     - [ ] Multi quality streaming
+- [ ] Custom metadata
+    - [ ] List metadata fields
+    - [ ] Create new metadata field
+    - [ ] Delete metadata field
+- [ ] Ingest settings
+    - [ ] Get ingest settings
 
 
 ## Testing
