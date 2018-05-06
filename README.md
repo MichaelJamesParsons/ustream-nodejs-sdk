@@ -102,7 +102,7 @@ ustream.channel.list().then((pageableResult) => {
 
 ```javascript
 let ustream = new Ustream({
-    type: "password",
+    type: 'password',
     username: '...'
     password: '...'
     client_id: '...'
