@@ -424,6 +424,8 @@ Since the release of this SDK, Ustream has added many new endpoints to their API
     - [ ] Delete metadata field
 - [ ] Ingest settings
     - [ ] Get ingest settings
+- [ ] Other
+    - [ ] Improve test coverage
 
 
 ## Testing
