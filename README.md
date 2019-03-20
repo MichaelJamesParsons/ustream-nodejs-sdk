@@ -34,6 +34,16 @@ JavaScript wrapper for Ustream's REST API.
 	- [Remove URLs from Whitelist](#remove-urls-from-whitelist)
 	- [Sharing Control](#sharing-control)
 	- [Change Branding Type](#change-branding-type)
+- [Playlist API](#playlist-api)
+    - [Is Enabled](#is-enabled)
+	- [List Playlists](#list-playlists)
+	- [List Videos in Playlist](#list-videos-in-playlist)
+	- [Create Playlist](#create-playlist)
+	- [Get Playlist Details](#get-playlist-details)
+	- [Add Video to Playlist](#add-video-to-playlist)
+	- [Delete Playlist](#delete-playlist)
+
+
 - [Todo](#todo)
 - [Testing](#testing)
 - [Issues & Contributing](#issues-and-contributing)
@@ -382,6 +392,109 @@ ustream.channel.setBrandingType(channelId, type)
 | channelId         | int                | ID of an existing channel.    |
 | type              | string             | The branding type.            |
 
+## Playlist API
+
+### Is Enabled
+You can check whether playlists are enabled or disabled on the channel page.
+
+```JavaScript
+ustream.isEnable(channelId)
+```
+
+| Parameter         | Type               | Description                |
+|-------------------|--------------------|----------------------------|
+| channelId         | int                | ID of an existing channel. |
+
+> Promise returns a boolean result stating if playlists are enabled for the channel or not.
+
+
+### List Playlists
+Retrieve a list of the playlists in the channel
+
+```JavaScript
+ustream.playlist.list(channelId, pageSize, page, includeEmptyLists)
+```
+
+| Parameter         | Type               | Description                |
+|-------------------|--------------------|----------------------------|
+| channelId         | int                | ID of an existing channel. |
+| pageSize  | int             | How many entries to return in one request.  Default is `50` and max is `50`    |
+| page  | int             | Starting page number.  Default is `1`    |
+| includeEmptyLists | boolean | If the value is true then empty playlists will be returned (false by default) |
+
+> Promise returns a Pageable result. See "Paging Results" section for details.
+
+
+### List Videos in Playlist
+Retrieve a list of videos that are in a specific playlist
+
+```JavaScript
+ustream.playlist.listVideos(playlistId, pageSize, page)
+```
+
+| Parameter         | Type               | Description                |
+|-------------------|--------------------|----------------------------|
+| playlistId         | int                | ID of an existing playlist. |
+| pageSize  | int             | How many entries to return in one request.  Default is `200` and max is `200`    |
+| page  | int             | Starting page number.  Default is `1`    |
+
+
+> Promise returns a Pageable result. See "Paging Results" section for details.
+
+
+### Create Playlist
+Create a new playlist in the channel
+
+```JavaScript
+ustream.playlist.create(channelId, title, options)
+```
+
+| Parameter         | Type               | Description                |
+|-------------------|--------------------|----------------------------|
+| channelId         | int                | ID of an existing channel. |
+| title         | string                | The title of the playlist. |
+| is_enabled  | int             | Whether the playlist is enabled or not. Values: 1 (enabled), 0 (disabled). (1 by default)    |
+
+
+### Get Playlist Details
+Getting the details of a playlist
+
+
+```JavaScript
+ustream.playlist.get(playlistId)
+```
+
+| Parameter         | Type               | Description                |
+|-------------------|--------------------|----------------------------|
+| playlistId         | int                | ID of an existing playlist. |
+
+
+### Add Video to Playlist
+Add an already uploaded video in the channel to the playlist
+
+
+```JavaScript
+ustream.playlist.addVideo(playlistId)
+```
+
+| Parameter         | Type               | Description                |
+|-------------------|--------------------|----------------------------|
+| playlistId         | int                | ID of an existing playlist. |
+| videoId         | int                | ID of an existing video. |
+
+
+
+### Delete Playlist
+
+```JavaScript
+ustream.playlist.remove(channelId)
+```
+
+| Parameter         | Type               | Description                |
+--------------------|--------------------|-----------------------------
+| playlistId         | int                | ID of an existing playlist. |
+
+
 
 ## Todo
 Since the release of this SDK, Ustream has added many new endpoints to their API. Support for these endpoints will be implemented in the upcoming weeks.
@@ -394,14 +507,14 @@ Since the release of this SDK, Ustream has added many new endpoints to their API
     - [ ] Create device password
     - [ ] Delete device password
 - [ ] Playlists
-    - [ ] List the user's playlists
-    - [ ] Create a playlist
-    - [ ] Playlist details
+    - [x] List the user's playlists
+    - [x] Create a playlist
+    - [x] Playlist details
     - [ ] Modify a playlist
-    - [ ] Delete a playlist
-    - [ ] Playlist videos
+    - [x] Delete a playlist
+    - [x] Playlist videos
     - [ ] Playlist video
-    - [ ] Channel playlists
+    - [x] Channel playlists
 - [ ] Video (new endpoints)
     - [ ] Download video
     - [ ] Video expiration
