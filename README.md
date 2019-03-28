@@ -398,7 +398,7 @@ ustream.channel.setBrandingType(channelId, type)
 You can check whether playlists are enabled or disabled on the channel page.
 
 ```JavaScript
-ustream.isEnable(channelId)
+ustream.isEnabled(channelId)
 ```
 
 | Parameter         | Type               | Description                |
@@ -409,7 +409,7 @@ ustream.isEnable(channelId)
 
 
 ### List Playlists
-Retrieve a list of the playlists in the channel
+Allows for the retrieval of the list of the playlists in the channel.
 
 ```JavaScript
 ustream.playlist.list(channelId, pageSize, page, includeEmptyLists)
@@ -418,15 +418,15 @@ ustream.playlist.list(channelId, pageSize, page, includeEmptyLists)
 | Parameter         | Type               | Description                |
 |-------------------|--------------------|----------------------------|
 | channelId         | int                | ID of an existing channel. |
-| pageSize  | int             | How many entries to return in one request.  Default is `50` and max is `50`    |
-| page  | int             | Starting page number.  Default is `1`    |
-| includeEmptyLists | boolean | If the value is true then empty playlists will be returned (false by default) |
+| pageSize  | int             | How many entries to return in one request.  Default is `50` and max is `50`.    |
+| page  | int             | Starting page number.  Default is `1`.    |
+| includeEmptyLists | boolean | If the value is true then empty playlists will be returned (false by default). |
 
 > Promise returns a Pageable result. See "Paging Results" section for details.
 
 
 ### List Videos in Playlist
-Retrieve a list of videos that are in a specific playlist
+This service retrieves a list of videos that are in a specific playlist.
 
 ```JavaScript
 ustream.playlist.listVideos(playlistId, pageSize, page)
@@ -435,15 +435,15 @@ ustream.playlist.listVideos(playlistId, pageSize, page)
 | Parameter         | Type               | Description                |
 |-------------------|--------------------|----------------------------|
 | playlistId         | int                | ID of an existing playlist. |
-| pageSize  | int             | How many entries to return in one request.  Default is `200` and max is `200`    |
-| page  | int             | Starting page number.  Default is `1`    |
+| pageSize  | int             | How many entries to return in one request.  Default is `200` and max is `200`.    |
+| page  | int             | Starting page number.  Default is `1`.    |
 
 
 > Promise returns a Pageable result. See "Paging Results" section for details.
 
 
 ### Create Playlist
-Create a new playlist in the channel
+Create a new playlist in the channel.
 
 ```JavaScript
 ustream.playlist.create(channelId, title, options)
@@ -453,11 +453,11 @@ ustream.playlist.create(channelId, title, options)
 |-------------------|--------------------|----------------------------|
 | channelId         | int                | ID of an existing channel. |
 | title         | string                | The title of the playlist. |
-| is_enabled  | int             | Whether the playlist is enabled or not. Values: 1 (enabled), 0 (disabled). (1 by default)    |
+| isEnabled  | int             | Whether the playlist is enabled or not. Possible values are 1 (enabled), 0 (disabled). The default is 1 (enabled).    |
 
 
 ### Get Playlist Details
-Getting the details of a playlist
+This entry point retrieves the details of a playlist.
 
 
 ```JavaScript
@@ -470,7 +470,7 @@ ustream.playlist.get(playlistId)
 
 
 ### Add Video to Playlist
-Add an already uploaded video in the channel to the playlist
+Add an already uploaded video in the channel to the playlist.
 
 
 ```JavaScript
@@ -485,6 +485,7 @@ ustream.playlist.addVideo(playlistId)
 
 
 ### Delete Playlist
+Remove a playlist from a channel.
 
 ```JavaScript
 ustream.playlist.remove(channelId)
