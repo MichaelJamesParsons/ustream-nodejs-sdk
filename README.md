@@ -18,6 +18,8 @@ JavaScript wrapper for Ustream's REST API.
 	- [List Videos](#list-videos)
 	- [Get Video Details](#get-video-details)
 	- [Delete Video](#delete-video)
+    - [List Metadata for Video](#list-metadata-for-video)
+    - [Set Metadata for Video](#set-metadata-for-video)
 - [Channel API](#channel-api)
 	- [Get Channel](#get-channel)
 	- [Create Channel](#create-channel)
@@ -221,6 +223,32 @@ ustream.video.remove(videoId)
 | Parameter         | Type               | Description                |
 |-------------------|--------------------|----------------------------|
 | videoId           | int                | ID of an existing video.   |
+
+
+### List Metadata for Video
+
+```JavaScript
+ustream.video.listMetadata(videoId)
+```
+
+> Promise returns a JSON array of the existing metadata and assigned values.
+
+| Parameter         | Type               | Description                |
+|-------------------|--------------------|----------------------------|
+| videoId           | int                | ID of an existing video.   |
+
+
+### Set Metadata for Video
+
+```JavaScript
+ustream.video.setMetadata(videoId, fieldId, value)
+```
+
+| Parameter         | Type               | Description                |
+|-------------------|--------------------|----------------------------|
+| videoId           | int                | ID of an existing video.   |
+| fieldId           | int                | ID of existing metadata field.   |
+| value           | any                | Data to be stored in metadata field.   |
 
 
 ## Channel API
@@ -526,6 +554,8 @@ Since the release of this SDK, Ustream has added many new endpoints to their API
     - [ ] Video copy
         - [ ] Check copy status
     - [ ] Video chapters
+    - [x] List metadata
+    - [x] Set metadata
 - [ ] Channel (new endpoints)
     - [ ] List featured videos
     - [ ] Update featured videos
