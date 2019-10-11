@@ -498,7 +498,6 @@ ustream.playlist.remove(channelId)
 
 
 ## Todo
-Since the release of this SDK, Ustream has added many new endpoints to their API. Support for these endpoints will be implemented in the upcoming weeks.
 
 - [x] Authentication
     - [x] Oauth implicit flow
@@ -521,7 +520,20 @@ Since the release of this SDK, Ustream has added many new endpoints to their API
     - [ ] Video expiration
     - [ ] Video thumbnail
     - [ ] Video labels
-    - [ ] Video caption
+        - [x] List all labels
+        - [x] Create label
+        - [x] Modify label
+        - [x] Delete label
+        - [x] List a video's labels
+        - [x] Add labels to video
+        - [ ] Remove label from video
+    - [x] Video caption
+        - [x] List captions
+        - [x] Show caption details
+        - [x] Modify caption details
+        - [x] Download captions
+        - [x] Upload captions
+        - [x] List supported caption languages
     - [ ] Video trim
     - [ ] Video copy
         - [ ] Check copy status
