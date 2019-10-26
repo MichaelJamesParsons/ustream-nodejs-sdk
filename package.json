@@ -11,13 +11,16 @@
     "chai": "^4.2.0",
     "mocha": "^6.2.0",
     "sinon": "^7.4.2",
-    "standard": "^10.0.2"
+    "standard": "^10.0.2",
+    "typescript": "^3.6.4"
   },
-  "main": "lib/ustream.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
+    "build": "tsc",
     "test": "standard && mocha test/ --recursive"
   },
   "repository": {
