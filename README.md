@@ -544,10 +544,10 @@ ustream.playlist.remove(channelId)
     - [ ] Get channel managers
 - [ ] Stream settings
     - [ ] Multi quality streaming
-- [ ] Custom metadata
-    - [ ] List metadata fields
-    - [ ] Create new metadata field
-    - [ ] Delete metadata field
+- [x] Custom metadata
+    - [x] List metadata fields
+    - [x] Create new metadata field
+    - [x] Delete metadata field
 - [ ] Ingest settings
     - [ ] Get ingest settings
 - [ ] Other
