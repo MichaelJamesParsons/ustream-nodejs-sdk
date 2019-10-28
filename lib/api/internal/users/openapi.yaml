@@ -1,0 +1,114 @@
+openapi: 3.0.0
+info:
+  description: "Endpoints for Ustream's user resource"
+  version: "1.0.0"
+  title: Ustream API user resource endpoints
+paths:
+  /users/self/device-passwords.json:
+    get:
+      summary: Get device passwords
+      operationId: getDevicePasswords
+      parameters:
+        - in: query
+          name: page
+          required: false
+          description: Requested page number (1 by default)
+          schema:
+            type: integer
+        - in: query
+          name: pagesize
+          required: false
+          description: Requested page size (50 by default)
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: search results matching criteria
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  device_passwords:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/DevicePassword'
+                  paging:
+                    $ref: '#/components/schemas/Paging'
+        '401':
+          description: 'Unauthorized: The provided Access Token is missing, revoked, expired or malformed'
+    post:
+      operationId: createDevicePassword
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewDevicePassword'
+      responses:
+        '200':
+          description: Created device password
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DevicePassword'
+        '400':
+          description: 'input_validation_error: Required parameter is missing'
+        '401':
+          description: 'Unauthorized: The provided Access Token is missing, revoked, expired or malformed'
+  /users/self/device-passwords/{userName}.json:
+    delete:
+      operationId: deleteDevicePassword
+      parameters:
+        - in: path
+          name: userName
+          required: true
+          schema:
+            type: string
+            minimum: 1
+          description: Username of the device password
+      responses:
+        '200':
+          description: Device password deleted
+        '401':
+          description: 'Unauthorized: The provided Access Token is missing, revoked, expired or malformed'
+components:
+  schemas:
+    NewDevicePassword:
+      type: object
+      properties:
+        device_name:
+          type: string
+          description: Name of the device
+        valid_from:
+          type: integer
+          description: The date and time after which the device password can be used for logging in (Unix timestamp).
+        valid_until:
+          type: integer
+          description: The date and time until the device password can be used for logging in (Unix timestamp).
+    DevicePassword:
+      type: object
+      properties:
+        device_name:
+          type: string
+          example: Sample Device 1
+        user_name:
+          type: string
+          example: xnwj3mseuka
+        created_at:
+          type: integer
+          example: 1497341340
+        valid_from:
+          type: integer
+          example: 1497441340
+        valid_until:
+          type: integer
+          example: 1497441340
+    Paging:
+      type: object
+      properties:
+        previous:
+          type: string
+          example: https://api.video.ibm.com/users/self/device-passwords.json?pagesize=PAGE_SIZE&page=PREVIOUS_PAGE
+        next:
+          type: string
+          example: https://api.video.ibm.com/users/self/device-passwords.json?pagesize=PAGE_SIZE&page=PREVIOUS_PAGE

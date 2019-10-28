@@ -1,0 +1,47 @@
+openapi: 3.0.0
+info:
+  description: "Endpoints for Ustream's channel resource"
+  version: "1.0.0"
+  title: Ustream API channel resource endpoints
+paths:
+components:
+  schemas:
+    NewDevicePassword:
+      type: object
+      properties:
+        device_name:
+          type: string
+          description: Name of the device
+        valid_from:
+          type: integer
+          description: The date and time after which the device password can be used for logging in (Unix timestamp).
+        valid_until:
+          type: integer
+          description: The date and time until the device password can be used for logging in (Unix timestamp).
+    DevicePassword:
+      type: object
+      properties:
+        device_name:
+          type: string
+          example: Sample Device 1
+        user_name:
+          type: string
+          example: xnwj3mseuka
+        created_at:
+          type: integer
+          example: 1497341340
+        valid_from:
+          type: integer
+          example: 1497441340
+        valid_until:
+          type: integer
+          example: 1497441340
+    Paging:
+      type: object
+      properties:
+        previous:
+          type: string
+          example: https://api.video.ibm.com/users/self/device-passwords.json?pagesize=PAGE_SIZE&page=PREVIOUS_PAGE
+        next:
+          type: string
+          example: https://api.video.ibm.com/users/self/device-passwords.json?pagesize=PAGE_SIZE&page=PREVIOUS_PAGE
