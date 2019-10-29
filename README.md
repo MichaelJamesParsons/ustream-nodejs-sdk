@@ -527,6 +527,10 @@ ustream.playlist.remove(channelId)
         - [x] List a video's labels
         - [x] Add labels to video
         - [ ] Remove label from video
+    - [x] Video metadata
+        - [x] List all video metadata values
+        - [x] Set video metadata value
+        - [x] Remove video metadata value
     - [x] Video caption
         - [x] List captions
         - [x] Show caption details
@@ -538,10 +542,17 @@ ustream.playlist.remove(channelId)
     - [ ] Video copy
         - [ ] Check copy status
     - [ ] Video chapters
-- [ ] Channel (new endpoints)
+- [ ] Channel
     - [ ] List featured videos
     - [ ] Update featured videos
     - [ ] Get channel managers
+    - [x] Channel metadata
+        - [x] List metadata values
+        - [x] set metadata value
+        - [x] remove metadata value
+        - [x] List metadata display settings
+        - [x] set metadata display setting
+        - [x] remove metadata display setting
 - [ ] Stream settings
     - [ ] Multi quality streaming
 - [x] Custom metadata
