@@ -527,6 +527,7 @@ ustream.playlist.remove(channelId)
         - [x] List a video's labels
         - [x] Add labels to video
         - [ ] Remove label from video
+        - [x] Edit video details
     - [x] Video metadata
         - [x] List all video metadata values
         - [x] Set video metadata value
