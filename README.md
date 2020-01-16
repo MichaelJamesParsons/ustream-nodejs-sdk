@@ -8,6 +8,7 @@ JavaScript wrapper for Ustream's REST API.
     - [Paging Results](#paging-results)
 - [Authentication API](#authentication-api)
 	- [Client Credentials Flow](#client-credentials-flow)
+	- [Resource Owner Password Credentials Flow](#resource-owner-password-credentials-flow)
 	- [Oauth Implicit Authentication Flow](#oauth-implicit-authentication-flow)
 	- [Oauth Authorization Code Authentication Flow](#oauth-authorization-code-authentication-flow)
 	- [Changing Authentication Credentials Workflow](#changing-authentication-credentials-workflow)
@@ -108,15 +109,27 @@ ustream.channel.list().then((pageableResult) => {
 
 ## Authentication API
 
-### Client Credentials Flow
+### Resource Owner Password Credentials Flow
 
 ```javascript
 let ustream = new Ustream({
     type: 'password',
-    username: '...'
-    password: '...'
-    client_id: '...'
+    username: '...',
+    password: '...',
+    client_id: '...',
     client_secret: '...'
+})
+```
+
+### Client Credentials Flow
+
+```javascript
+let ustream = new Ustream({
+    type: 'client_credentials',
+    device_name: '...',
+    scope: '...', // "broadcaster" or empty
+    client_id: '...',
+    client_secret: '...',
 })
 ```
 
