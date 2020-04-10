@@ -567,8 +567,8 @@ ustream.playlist.remove(channelId)
         - [x] List metadata display settings
         - [x] set metadata display setting
         - [x] remove metadata display setting
-- [ ] Stream settings
-    - [ ] Multi quality streaming
+- [x] Stream settings
+    - [x] Multi quality streaming
 - [x] Custom metadata
     - [x] List metadata fields
     - [x] Create new metadata field
