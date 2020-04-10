@@ -573,8 +573,8 @@ ustream.playlist.remove(channelId)
     - [x] List metadata fields
     - [x] Create new metadata field
     - [x] Delete metadata field
-- [ ] Ingest settings
-    - [ ] Get ingest settings
+- [x] Ingest settings
+    - [x] Get ingest settings
 - [ ] Other
     - [ ] Improve test coverage
 
