@@ -558,7 +558,7 @@ ustream.playlist.remove(channelId)
     - [ ] Video chapters
 - [ ] Channel
     - [x] List featured videos
-    - [ ] Update featured videos
+    - [x] Update featured videos
     - [ ] Get channel managers
     - [x] Channel metadata
         - [x] List metadata values
