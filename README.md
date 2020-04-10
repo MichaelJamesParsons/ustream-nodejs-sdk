@@ -515,10 +515,10 @@ ustream.playlist.remove(channelId)
 - [x] Authentication
     - [x] Oauth implicit flow
     - [x] Oauth authorization code flow
-- [ ] Device passwords
-    - [ ] Get device passwords
-    - [ ] Create device password
-    - [ ] Delete device password
+- [x] Device passwords
+    - [x] Get device passwords
+    - [x] Create device password
+    - [x] Delete device password
 - [ ] Playlists
     - [x] List the user's playlists
     - [x] Create a playlist
