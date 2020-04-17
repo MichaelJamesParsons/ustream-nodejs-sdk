@@ -575,6 +575,13 @@ ustream.playlist.remove(channelId)
     - [x] Delete metadata field
 - [x] Ingest settings
     - [x] Get ingest settings
+- [x] User
+    - [x] List channels
+    - [x] List videos
+    - [x] Create label
+    - [x] Update label
+    - [x] List labels
+    - [x] Delete label
 - [ ] Other
     - [ ] Improve test coverage
 
