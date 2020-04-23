@@ -69,6 +69,7 @@ let ustream = new Ustream({
     password: "...",
     client_id: "...",
     client_secret: "...",
+    token_type: "...", // Optional, default is bearer
     type: "password"
 })
 
@@ -117,7 +118,8 @@ let ustream = new Ustream({
     username: '...',
     password: '...',
     client_id: '...',
-    client_secret: '...'
+    client_secret: '...',
+    token_type: "..." // Optional, default is bearer
 })
 ```
 
@@ -130,6 +132,7 @@ let ustream = new Ustream({
     scope: '...', // "broadcaster" or empty
     client_id: '...',
     client_secret: '...',
+    token_type: "..." // Optional, default is bearer
 })
 ```
 
