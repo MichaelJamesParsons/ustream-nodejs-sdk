@@ -158,6 +158,7 @@ let ustream = new Ustream({
   redirect_uri: '...'
 })
 ```
+**Note**: The Analytics API uses only the jwt token type then isn't working with bearer.
 
 ### Oauth Demo App
 
@@ -585,6 +586,16 @@ ustream.playlist.remove(channelId)
     - [x] Update label
     - [x] List labels
     - [x] Delete label
+- [ ] Analytics
+    - []  List of unique viewers for all contents
+    - []  List of unique viewers for a specific content type
+    - [x] Raw view export for a given time period
+    - [x] Raw view export for a specific content type for a given time period
+    - []  Sum total view number for a given period for all contents
+    - []  Sum total view number for a given period and a specific content type
+    - []  Number of sum unique devices for a given period and all contents
+    - []  Number of sum unique devices for a given period and a specific content type
+    - ...
 - [ ] Other
     - [ ] Improve test coverage
 
