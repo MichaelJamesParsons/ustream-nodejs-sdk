@@ -533,7 +533,7 @@ ustream.playlist.remove(channelId)
     - [ ] Playlist video
     - [x] Channel playlists
 - [ ] Video (new endpoints)
-    - [ ] Download video
+    - [x] Download video
     - [ ] Video expiration
     - [ ] Video thumbnail
     - [ ] Video labels
