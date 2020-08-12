@@ -534,6 +534,7 @@ ustream.playlist.remove(channelId)
     - [x] Channel playlists
 - [ ] Video (new endpoints)
     - [x] Download video
+    - [x] Set up viewer authentication
     - [ ] Video expiration
     - [ ] Video thumbnail
     - [ ] Video labels
@@ -564,6 +565,7 @@ ustream.playlist.remove(channelId)
     - [x] List featured videos
     - [x] Update featured videos
     - [ ] Get channel managers
+    - [x] Set up viewer authentication
     - [x] Channel metadata
         - [x] List metadata values
         - [x] set metadata value
