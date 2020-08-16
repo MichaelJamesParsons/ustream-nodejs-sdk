@@ -1,6 +1,6 @@
 {
   "name": "ustream-sdk",
-  "version": "1.10.0",
+  "version": "1.11.0",
   "description": "JavaScript wrapper for Ustream REST API",
   "dependencies": {
     "axios": "^0.19.0",
