@@ -261,7 +261,7 @@ ustream.channel.create(channelId, opts)
 
 | Parameter         | Type               | Description                |
 |-------------------|--------------------|----------------------------|
-| channelId         | int                | ID of an existing channel. |
+| title             | string             | Channel title.             |
 | opts.description  | string             | Description of channel.    |
 
 ### Edit Channel
