@@ -158,7 +158,23 @@ let ustream = new Ustream({
   redirect_uri: '...'
 })
 ```
-**Note**: The Analytics API uses only the jwt token type then isn't working with bearer.
+
+### Password Credentials Flow for Analytics API
+
+```javascript
+let ustream = new Ustream({
+    type: 'password',
+    username: '...',
+    password: '...',
+    client_id: '...',
+    client_secret: '...',
+    token_type: "jwt",
+    endpoint: 'https://analytics-api.video.ibm.com',
+    version: 'v1'
+})
+```
+
+**Note**: The Analytics API uses only the jwt token type with a different API endpoint, and the targetted version is required.
 
 ### Oauth Demo App
 
