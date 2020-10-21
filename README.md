@@ -611,8 +611,8 @@ ustream.playlist.remove(channelId)
     - [x] List labels
     - [x] Delete label
 - [ ] Analytics
-    - []  List of unique viewers for all contents
-    - []  List of unique viewers for a specific content type
+    - [x]  List of unique viewers for all contents
+    - [x]  List of unique viewers for a specific content type
     - [x] Raw view export for a given time period
     - [x] Raw view export for a specific content type for a given time period
     - []  Sum total view number for a given period for all contents
