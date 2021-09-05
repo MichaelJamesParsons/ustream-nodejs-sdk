@@ -3,7 +3,7 @@
   "version": "1.12.0",
   "description": "JavaScript wrapper for Ustream REST API",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.3",
     "ftp": "^0.3.10",
     "qs": "^6.8.0"
   },
